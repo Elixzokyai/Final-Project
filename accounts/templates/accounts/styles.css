@@ -1,8 +1,3 @@
-
-        /* Overall body styling */
-
-
-
 .AllContains{
     display: grid;
     grid-gap: 30px;
@@ -61,5 +56,3 @@
 #Registration{
     height: 100px;
 }
-
-
