@@ -1,0 +1,73 @@
+.AllContains{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        'cd cd cd cd cd cd cd cd '
+        'nd nd nd nd nd nd nd'
+        'mn mn mn mn mn mn'
+        'vd vd vd vd vd vd vd '
+;
+    height: auto;
+}
+#navbar{
+    grid-area: cd;
+    height: 100px;
+    position: fixed;
+}
+#Some1{
+    grid-area: nd;
+}
+#footDiv{
+    grid-area: vd;
+     padding-top: 50px;
+}
+#Post_task{
+    grid-area: mn;
+
+}
+
+#Colors{
+    background-color: #6f42c1;
+    transition: color 0.3s;
+
+}
+
+#Colors:hover {
+    color: #6610f2;
+}
+
+.form-row {
+            display: flex;
+            gap: 20px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+#Registration{
+    height: 100px;
+}
