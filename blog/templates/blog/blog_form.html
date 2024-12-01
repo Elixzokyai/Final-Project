@@ -33,7 +33,7 @@
         <div id="Some1">
 
             <div class="container">
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-4"></div>
                      <div style="margin-bottom: 30px; margin-top: 40px" class="col-md-4">
                          <h4> Welcome, {{ user.username }}</h4>
@@ -45,9 +45,12 @@
 
                 <div id="Post_task">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row" style="background-color: honeydew; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
 
                             <div class="col-md-6">
+                                             <button  style="border-color: white">
+                                                <a href="{% url 'blog_list' %}" class="btn btn-primary">Back Home</a>
+                                            </button>
                                 <form method="post">
                                                 {% csrf_token %}
 
@@ -55,7 +58,8 @@
                                                  {{ form.as_p }}
                                                 <button type="submit" class="btn btn-success">Save</button>
                                             </form>
-                                            <a href="{% url 'blog_list' %}">Back to the home</a>
+
+
                             </div>
                             <div class="col-md-6"></div>
                         </div>

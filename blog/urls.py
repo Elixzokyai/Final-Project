@@ -4,6 +4,8 @@ from .import views
 
 
 
+# create the urls
+
 urlpatterns = [
     path('', views.blog_list, name='blog_list'),
     path('blog/post/', views.blog_apply, name='blog_apply'),

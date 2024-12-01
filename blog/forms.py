@@ -9,6 +9,7 @@ class BlogForm(forms.ModelForm):
         ('Instagram', 'Instagram'),
         ("linkedin", 'LinkedIn'),
         ('Youtube', 'Youtube'),
+        ('Tiktok', 'Tiktok')
     ]
 
     title = forms.ChoiceField(

@@ -11,10 +11,12 @@
     <link href="bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="AllContains">
         <div id="navbar">
-               <nav class="navbar bg-body-tertiary" style="height: 80px; margin-bottom: 80px">
+            <header  class="ccnHeader1 header-nav menu_style_home_one navbar-scrolltofixed stricky main-menu scroll-to-fixed-fixed stricky-fixed slideInDown animated" style="z-index: 1000; position: fixed; top: 0px; margin-bottom: 0px; margin-left: 0px; width: 99%; left: 1%; right: 0px; margin-right: 0px">
+
+               <nav class="navbar bg-body-tertiary" style="height: 80px; margin-bottom: 80px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px">
                               <div class="container-fluid">
                                 <form class="d-flex" role="search">
                                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -30,24 +32,32 @@
                                   <a href="{%    url 'logout'   %}" type="submit" class="btn btn-primary">Logout</a>
                               </div>
                     </nav>
+                </header>
         </div>
-        <div id="Some1">
+        <div id="Some1" >
 
-            <div class="container;  align-content-center">
-                <div class="row">
+            <div class="container-fluid" >
+                <div class="row" style="background-color: #b6d4fe; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
                     <div class="col-md-4"></div>
-                     <div style="margin-bottom: 30px; margin-top: 40px" class="col-md-4">
+                     <div style="margin-bottom: 30px; margin-top: 200px" class="col-md-4">
                          <h4> Welcome, {{ user.username }}</h4>
 
 
                      </div>
-                     <div class="col-md-4"></div>
+                     <div class="col-md-4">
+
+                     </div>
                 </div>
 
                 <div id="Post_task">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div id="Colors" class="col-md-6">
+                    <div class="container-fluid"  >
+                        <div class="row" style="background-color: lightgray; border-radius: 5px">
+                              <div style="margin-left: 60%" class="col-md-6">
+                                 <br>
+                                 <h4>Fill the application below as  Tasker </h4>
+                                 <a class="btn btn-success" target="_blank" href="{%url 'application_view'%}">Apply</a>
+                             </div>
+                            <div style="background-color: whitesmoke; border-radius: 5px; margin: 5px; " class="col-md-6">
                                 <h4 >Apply for the blogging activity if you are qualified.</h4>
                                 <a class="btn btn-primary" href="{%  url 'blog_apply' %}">Add Job</a>
                                             <ul>
@@ -65,16 +75,14 @@
                                                         <a type="btn" class="btn btn-warning" href="{% url 'blog_update' blog.pk %}">Edit</a>
 
                                                         <a type="btn" class="btn btn-danger" href="{% url 'blog_delete' blog.pk %}">Delete</a>
-
                                                     </li>
                                                 {% endfor %}
-                       </div>
-                            <div class="col-md-6"></div>
-                        </div>
+                                            </ul>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
              <div id="footDiv" >
@@ -83,6 +91,9 @@
                             <div id="emptyPara" class="col-md-4">
                                 <h5>About Us</h5>
                                 <p>Blogger is a platform that will be used for posting the jobs and users can apply and earn.</p>
+                                 <a>
+                                    <img src="{% static 'blog1.jpg'  %}"  alt="Logo"  style="border-radius: 10px; margin-bottom: 30px" width="30%" height="40%" class="d-inline-block align-text-top">
+                                 </a>
                         </div>
                         <div class="col-md-4">
                             <h5>Contact Us</h5>
@@ -100,7 +111,13 @@
         </div>
     </div>
 
-</div>
+  </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+     <path fill="#0099ff" fill-opacity="1" d="M0,160L30,149.3C60,139,120,117,180,117.3C240,117,300,139,360,160C420,181,480,203,540,202.7C600,203,660,181,720,186.7C780,192,840,224,900,218.7C960,213,1020,171,1080,154.7C1140,139,1200,149,1260,149.3C1320,149,1380,139,1410,133.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+    </svg>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
