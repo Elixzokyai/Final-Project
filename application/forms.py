@@ -11,7 +11,7 @@ class ApplicationUserForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'email': forms.TextInput(attrs={'class':'form-control','placeholder':'Email'}),
-            'SpecifyAccount': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Enter account e.g Twitter'}),
+            'SpecifyAccount': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Enter account e.g X (Twitter)'}),
             'numberOfFollowers': forms.TextInput(attrs={'class':'form-control', 'placeholder':' Enter number of Followers'}),
             'following': forms.TextInput(attrs={'class':'form-control', 'placeholder':' Enter number of Following'}),
 
