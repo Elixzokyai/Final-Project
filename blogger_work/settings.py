@@ -17,6 +17,16 @@ from django.conf.global_settings import AUTH_USER_MODEL
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'elijahkyai100@gmail.com'
+EMAIL_HOST_PASSWORD = 'kxcu igle biey gdzy'
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -55,6 +65,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'blogger_work.urls'
+
+CORS_ALLOWED_ORIGINS = [
+
+    'http://127.0.0.1:4451',]
+
 
 TEMPLATES = [
     {
@@ -97,9 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
              'OPTIONS': {'min_length': 6},
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
+
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },

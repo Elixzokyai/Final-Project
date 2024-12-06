@@ -26,12 +26,17 @@
                               </div>
                     </nav>
         </div>
-        <div id="Some1">
+        <div id="Some1" style="position: relative;">
+
 
             <div class="container">
                 <div class="row">
                     <div style="margin-bottom: 150px" class="col-md-4"></div>
-                     <div style="background-color: #0dcaf0; border-radius: 10px" class="col-md-4">
+                     <div style="background-color: #0dcaf0; border-radius: 10px" class="col-md-4"  style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f8f9fa; position: absolute;
+                                                                        transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                                                                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+                                                                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'; ">
+
                          <h4>Login</h4>
 
                          <form method="post">

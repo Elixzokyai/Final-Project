@@ -11,16 +11,11 @@
     <link href="bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #b6d4fe">
     <div class="AllContains">
         <div id="navbar">
                <nav class="navbar bg-body-tertiary" style="height: 80px; margin-bottom: 80px">
                               <div class="container-fluid">
-                                <form class="d-flex" role="search">
-                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                  <button class="btn btn-outline-success" type="submit">Search</button>
-                                </form>
-
                                         <a>
                                             {% load static %}
                                           <img src="{% static 'blog.png' %}" alt="Logo" width="50px" height="54px" class="d-inline-block align-text-top">
@@ -47,13 +42,16 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4"></div>
-                            <div style="margin-top: 100px; border-radius: 10px; margin-bottom: 50px; background-color: gray" class="col-md-4">
+                            <div class="col-md-4" style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: darkgrey;
+                                                                        transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                                                                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+                                                                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
                                 <br>
                                             <h3>Delete Job</h3>
                                             <p>Are you sure you want to delete? "{{blog.title}}"</p>
                                             <form method="post">
                                                 {% csrf_token %}
-                                                <button type="submit" class="btn btn-danger">Yes Delete Job</button>
+                                                <button type="submit" class="btn btn-danger">Yes, Delete Job</button>
                                             </form>
 
                                             <a  style="margin-top: 30px; margin-bottom: 30px" type="btn" class="btn btn-primary" href="{% url 'blog_list' %}">Cancel</a>

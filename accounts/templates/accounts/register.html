@@ -34,7 +34,17 @@
             background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 150%22 preserveAspectRatio=%22none%22%3E%3Cpath d=%22M0,0 C150,50 350,50 500,0 C650,-50 850,-50 1000,0 C1150,50 1350,50 1500,0 L1500,150 L0,150 Z%22 fill=%22%23ffffff%22/%3E%3C/svg%3E') no-repeat bottom center;
             background-size: cover;
         }
-    </style>
+        .password-group {
+                    display: flex;
+                    align-items: center;
+            }
+                .password-group label {
+                    margin-right: 10px;
+                    width: 150px; /* Adjust the width as needed */
+                    text-align: right;
+                }
+            </style>
+
 
 </head>
 <body>
@@ -60,39 +70,42 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4"></div>
-                             <div    class="col-md-4">
+                             <div    class="col-md-4"  style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f8f9fa;
+                                                                        transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                                                                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+                                                                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
                                   <h4>Register</h4>
-                                 <form method="post">
-                                            {% csrf_token %}
-                                            <div class="form-row">
-                                                <div class="form-group">
-                                                    {{ form.first_name.label_tag }}
-                                                    {{ form.first_name }}
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                <div class="form-row">
+                                                    <div class="form-group">
+                                                        {{ form.first_name.label_tag }}
+                                                        {{ form.first_name }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ form.last_name.label_tag }}
+                                                        {{ form.last_name }}
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    {{ form.last_name.label_tag }}
-                                                    {{ form.last_name }}
+                                                    {{ form.username.label_tag }}
+                                                    {{ form.username }}
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form.username.label_tag }}
-                                                {{ form.username }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form.email.label_tag }}
-                                                {{ form.email }}
-                                            </div>
-                                            <div style="margin-top: 20px" class="form-group">
-                                                {{ form.password1.label_tag }}
-                                                {{ form.password1 }}
-                                            </div>
-                                            <div style="margin-top: 20px" class="form-group">
-                                                {{ form.password2.label_tag }}
-                                                {{ form.password2 }}
-                                            </div>
-                                     <button style="margin-top: 20px" type="submit" class="btn btn-primary">Register</button>
+                                                <div class="form-group">
+                                                    {{ form.email.label_tag }}
+                                                    {{ form.email }}
+                                                </div>
+                                                <div class="form-row form-group password-group" style="margin-top: 5px">
+                                                    <label for="id_password1">{{ form.password1.label }}</label>
+                                                    {{ form.password1 }}
+                                                </div>
+                                                <div class="form-row form-group password-group">
+                                                    <label for="id_password2">{{ form.password2.label }}</label>
+                                                    {{ form.password2 }}
+                                                </div>
+                                                <button style="margin-top: 20px" type="submit" class="btn btn-primary">Register</button>
+                                            </form>
 
-                                        </form>
 
                              </div>
                              <div class="col-md-4"></div>

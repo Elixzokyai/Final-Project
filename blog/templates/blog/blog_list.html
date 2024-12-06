@@ -9,6 +9,12 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-grid.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
   <div class="container-fluid">
@@ -16,22 +22,30 @@
         <div id="navbar">
             <header  class="ccnHeader1 header-nav menu_style_home_one navbar-scrolltofixed stricky main-menu scroll-to-fixed-fixed stricky-fixed slideInDown animated" style="z-index: 1000; position: fixed; top: 0px; margin-bottom: 0px; margin-left: 0px; width: 99%; left: 1%; right: 0px; margin-right: 0px">
 
-               <nav class="navbar bg-body-tertiary" style="height: 80px; margin-bottom: 80px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px">
-                              <div class="container-fluid">
-                                <form class="d-flex" role="search">
-                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                  <button class="btn btn-outline-success" type="submit">Search</button>
+                          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                        <div class="container-fluid">
+                                            <a class="btn btn-primary me-4" href="{% url 'blog_list' %}">Home</a>
+                                            <a class="btn btn-primary me-4" target="_blank" href="{% url 'application_view' %}">Apply</a>
+                                             <a class="btn btn-primary me-4" href="{%  url 'blog_apply' %}">Add Job</a>
+                                            <a class="btn btn-primary me-4" href="#about-us">About Us</a>
+                                            <a class="btn btn-primary me-4" href="#contact-us">Contact Us</a>
 
-                                </form>
+                                            <div class="ms-auto d-flex align-items-center">
+                                                <a style="display: flex; align-items: center; justify-content: center;">
+                                                        {% load static %}
+                                                     Blogger.com
+                                                        <img src="{% static 'blog.png' %}" alt="Blogger Logo" width="50px" height="54px" class="d-inline-block me-2">
 
-                                        <a>
-                                            {% load static %}
-                                          <img src="{% static 'blog.png' %}" alt="Logo" width="50px" height="54px" class="d-inline-block align-text-top">
-                                          Blogger.com
-                                        </a>
-                                  <a href="{%    url 'logout'   %}" type="submit" class="btn btn-primary">Logout</a>
-                              </div>
-                    </nav>
+                                                    </a>
+
+                                                </a>
+                                                <a href="{% url 'logout' %}" class="btn btn-primary me-4">Logout</a>
+                                            </div>
+                                        </div>
+                                    </nav>
+
+
+
                 </header>
         </div>
         <div id="Some1" >
@@ -52,33 +66,48 @@
                 <div id="Post_task">
                     <div class="container-fluid"  >
                         <div class="row" style="background-color: lightgray; border-radius: 5px">
-                              <div style="margin-left: 60%" class="col-md-6">
-                                 <br>
-                                 <h4>Fill the application as  Tasker </h4>
-                                 <a class="btn btn-success" target="_blank" href="{%url 'application_view'%}">Apply</a>
-                             </div>
-                            <div style="background-color: whitesmoke; border-radius: 5px; margin: 5px; " class="col-md-6">
-                                <h4 style="color: green; margin-bottom: 30px" >Employers Dashboard.</h4>
-                                <h3>Click below to add jobs with requirements</h3>
-                                <a class="btn btn-primary" href="{%  url 'blog_apply' %}">Add Job</a>
-                                            <ul>
-                                               {% for blog in blogs%}
-                                                <li> <strong>Title:  {{blog.title}}</strong></li>
-                                                    <li style="color: #6c757d">Description: {{blog.description}}</li>
-                                                     <li>Amount: {{blog.Amount}}</li>
-                                                      <li style="color: #b6d4fe">Requirements: {{blog.Requirements}}</li>
-                                                    <li>
 
-                                                          <p>{{blog.completed}}</p>
-                                                            <span style="color: green;">{% if blog.completed %} New job Created {% endif %}</span>
-                                                        <br>
+                            <div style="background-color: whitesmoke; border-radius: 5px; margin: 5px; " >
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                         <div class="col-md-6">
+                                              <h4 style="color: green; margin-bottom: 30px; align-items: center; justify-content: center" >Employers Dashboard.</h4>
 
-                                                        <a type="btn" class="btn btn-warning" href="{% url 'blog_update' blog.pk %}">Edit</a>
+                                         </div>
+                                         <div class="col-md-3"></div>
 
-                                                        <a type="btn" class="btn btn-danger" href="{% url 'blog_delete' blog.pk %}">Delete</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
+                                    </div>
+
+                                </div>
+                                           <div>
+                                              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                                                            {% for blog in blogs %}
+                                                            <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f8f9fa;
+                                                                        transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                                                                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+                                                                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                                                                <ul style="list-style: none; padding: 0;">
+                                                                    <li><strong>Title:</strong> {{ blog.title }}</li>
+                                                                    <li style="color: #6c757d;"><strong>Description:</strong> {{ blog.description }}</li>
+                                                                    <li><strong>Amount:</strong> {{ blog.Amount }}</li>
+                                                                    <li style="color: #b6d4fe;"><strong>Requirements:</strong> {{ blog.Requirements }}</li>
+                                                                    <li>
+                                                                        <p><strong>Completed:</strong> {{ blog.completed }}</p>
+                                                                        <span style="color: green;">
+                                                                            {% if blog.completed %} New job Created {% endif %}
+                                                                        </span>
+                                                                        <br>
+                                                                        <a class="btn btn-success" href="{% url 'blog_update' blog.pk %}">Edit</a>
+                                                                        <a class="btn btn-danger" href="{% url 'blog_delete' blog.pk %}">Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            {% endfor %}
+                                                        </div>
+
+
+                                           </div>
                             </div>
 
                         </div>
@@ -90,17 +119,21 @@
                     <div class="container">
                         <div class="row">
                             <div id="emptyPara" class="col-md-4">
-                                <h5>About Us</h5>
+                               <section id="about-us">
+                                    <h5>About Us</h5>
                                 <p>Blogger is a platform that will be used for posting the jobs and users can apply and earn.</p>
                                  <a>
                                     <img src="{% static 'blog1.jpg'  %}"  alt="Logo"  style="border-radius: 10px; margin-bottom: 30px" width="30%" height="40%" class="d-inline-block align-text-top">
                                  </a>
+                               </section>
                         </div>
                         <div class="col-md-4">
-                            <h5>Contact Us</h5>
+                            <section id="contact-us">
+                                <h5>Contact Us</h5>
                             <p>Email: elijahkyai100@gmail.com.ac.ke</p>
                             <p>Phone: +254791193799</p>
-                        <p>Address: Westlands, Nairobi, Kenya</p>
+                             <p>Address: Westlands, Nairobi, Kenya</p>
+                            </section>
                             </div>
                             <div class="col-md-4">
                                 <h5>Follow Us On:</h5>

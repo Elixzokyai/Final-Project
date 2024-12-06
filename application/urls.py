@@ -6,5 +6,5 @@ from .import views
 
 urlpatterns = [
     path('', views.application_view, name='application_view'),
-    path('application/applied/', views.application_form, name='application_form'),
+    path('#/application/', views.application_form, name='application_form'),
 ]
