@@ -12,4 +12,5 @@ urlpatterns = [
     path('blog/', blog_list, name='blogapp'),
     path('apply/', application_view, name='applicationapp'),
 
+
 ]

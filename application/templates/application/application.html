@@ -65,33 +65,10 @@
 
                     </div>
                      <div class="col-md-4">
-                         <h4>Submit your details Here</h4>
-                         <form method="post">
-                              {% csrf_token %}
-
-                                            <div class="form-row">
-                                                <div class="form-group">
-                                                    {{ form.name.label_tag }}
-                                                    {{ form.name }}
-
-                                            <div class="form-group">
-                                                {{ form.email.label_tag }}
-                                                {{ form.email }}
-                                            </div>
-                                            <div style="margin-top: 20px" class="form-group">
-                                                {{ form.SpecifyAccount.label_tag }}
-                                                {{ form.SpecifyAccount }}
-                                            </div>
-                                            <div style="margin-top: 20px" class="form-group">
-                                                {{ form.numberOfFollowers.label_tag }}
-                                                {{ form.numberOfFollowers }}
-                                            </div>
-                                                    <div style="margin-top: 20px" class="form-group" >
-                                                        {{ form.following.label_tag }}
-                                                         {{ form.following }}
-                                                    </div>
-
-                             <button style="margin-bottom: 40px; margin-top: 40px" type="submit" class="btn btn-success">Submit</button>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                      </div>
                       <div class="col-md-2">

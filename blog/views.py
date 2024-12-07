@@ -27,7 +27,7 @@ def blog_apply(request):
 def blog_delete(request, pk):
     blog = get_object_or_404(Blog, pk=pk)
     if request.method == 'POST':
-        blog.delete()  # Corrected line
+        blog.delete()
         return redirect('blog_list')
     return render(request, 'blog/blog_confirm_delete.html', {'blog': blog})
 
@@ -35,7 +35,7 @@ def blog_delete(request, pk):
 def blog_update(request, pk):
     blog = get_object_or_404(Blog, pk=pk)
     if request.method == 'POST':
-        form = BlogForm(request.POST, instance=blog)  # Corrected line
+        form = BlogForm(request.POST, instance=blog)  
         if form.is_valid():
             form.save()
             return redirect('blog_list')
