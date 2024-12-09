@@ -11,7 +11,7 @@ def application_view(request):
             user = form.save()
 
             # Send an email notification
-            subject = 'Your  documents has been submitted successfully in blogger website'
+            subject = 'Welcome to blogger website'
             message = f'Dear {user.name},\n\nYour application has been received. Your status is currently pending. We will notify you once it has been approved.'
             recipient_email = user.email
 
@@ -20,7 +20,7 @@ def application_view(request):
                 message,
                 'elijahkyai100@gmail.com',
                 [recipient_email],
-                fail_silently=False,
+                fail_silently=True,
             )
 
             return redirect('application_form')
