@@ -9,10 +9,11 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os.path
 from pathlib import Path
+from django.contrib import staticfiles
 
-from django.conf.global_settings import AUTH_USER_MODEL
+from django.conf.global_settings import AUTH_USER_MODEL, STATIC_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,9 +39,9 @@ DEFAULT_FROM_EMAIL = 'elijahkyai100@gmail.com'
 SECRET_KEY = 'django-insecure-oi2gvczvvemvq$!v-**gfa(a_33!n+2z%=zus+a68+l5&ikmg*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = [ ]
+DEBUG = False
+# DEBUG =True
+ALLOWED_HOSTS = ['127.0.0.1','blogger_work.onrender.com' ]
 
 
 # Application definition
@@ -140,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # This is where your static files will be stored (e.g., a folder named 'static' in the base directory)
 ]

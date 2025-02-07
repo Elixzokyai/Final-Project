@@ -1,0 +1,1 @@
+web: gunicorn blogger_work.wsgi:application
